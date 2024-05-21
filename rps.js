@@ -34,6 +34,7 @@ function calcGameResult(playerSelection, computerSelection) {
             gameStatus = "lose";
             winnerNum = computerSelection;
             loserNum = playerSelectionNum;
+            updateScore(gameStatus);
             break;
 
 
@@ -41,6 +42,7 @@ function calcGameResult(playerSelection, computerSelection) {
             gameStatus = "win";
             loserNum = computerSelection;
             winnerNum = playerSelectionNum;
+            updateScore(gameStatus);
             break;
     }
 
@@ -104,12 +106,33 @@ function newPlayGame(playerInput) {
 }
 
 function appendLog(playerSelection, computerSelection) {
-    let div = createElement("div");
+    let div = document.createElement("div");
     div.textContent = calcGameResult(playerSelection, computerSelection);
     // Might need to add css class to the new div
     document.querySelector(".logs").appendChild(div);
 }
 
-fucntion updateScore(playerSelection, computerSelection) {
-    if (
+function updateScore(gameStatus) {
+    if (gameStatus === "win") {
+        let score = document.querySelector(".user-score");
+        let newScore = String(Number(score.textContent) + 1);
+        score.textContent = newScore;
+        if (newScore === "5") {
+            alert("You are the winner!");
+        }
+    }
+
+    if (gameStatus === "lose") {
+        let score = document.querySelector(".bot-score");
+        let newScore = String(Number(score.textContent) + 1);
+        score.textContent = newScore;
+        if (newScore === "5") {
+            alert("You are the loser :(");
+        }
+    }
 }
+
+let buttons = document.querySelector(".user-input");
+buttons.addEventListener("click", function(e) {
+    newPlayGame(e.currentTarget.className);
+})

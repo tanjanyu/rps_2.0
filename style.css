@@ -17,6 +17,9 @@
   height: 50px;
   width: 50px;
   color: black;
+  font-size: 30px;
+  padding-left: auto;
+  padding-right: auto;
 }
 
 .user-score {
