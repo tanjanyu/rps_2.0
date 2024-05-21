@@ -3,7 +3,7 @@ let numOfOptions = 3;
 let numOfGames = 5;
 let options = ["rock", "paper", "scissors"];
 let capitalizedOptions = ["Rock", "Paper", "Scissors"];
-playGame();
+//playGame();
 
 // Function Declerations
 // Randomly return either rock paper or scissors
@@ -91,4 +91,25 @@ function playGame() {
         computerSelection = getComputerChoice();
         console.log(calcGameResult(playerSelection, computerSelection));
     }
+}
+
+
+
+// New functions
+function newPlayGame(playerInput) {
+    playerSelection = playerInput.toLowerCase();
+    computerSelection = getComputerChoice();
+    appendLog(playerSelection, computerSelection);
+    
+}
+
+function appendLog(playerSelection, computerSelection) {
+    let div = createElement("div");
+    div.textContent = calcGameResult(playerSelection, computerSelection);
+    // Might need to add css class to the new div
+    document.querySelector(".logs").appendChild(div);
+}
+
+fucntion updateScore(playerSelection, computerSelection) {
+    if (
 }

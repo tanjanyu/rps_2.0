@@ -1,28 +1,28 @@
 .score, .user-input {
-    display: flex;
-  }
-  
-  .score, .user-input {
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 20px;
-  }
-  
-  .scissors, .paper {
-    margin-left: 10px;
-  }
-  
-  .user-score, .bot-score {
-    flex: 0 0 auto;
-    height: 50px;
-    width: 50px;
-    color: black;
-  }
-  
-  .user-score {
-    background-color: lightblue;
-  }
-  
-  .bot-score {
-    background-color: lightsalmon;
-  }
+  display: flex;
+}
+
+.score, .user-input {
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.scissors, .paper {
+  margin-left: 10px;
+}
+
+.user-score, .bot-score {
+  flex: 0 0 auto;
+  height: 50px;
+  width: 50px;
+  color: black;
+}
+
+.user-score {
+  background-color: lightblue;
+}
+
+.bot-score {
+  background-color: lightsalmon;
+}
